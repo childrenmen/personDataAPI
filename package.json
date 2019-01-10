@@ -1,0 +1,38 @@
+{
+  "name": "personDataAPI",
+  "version": "1.0.0",
+  "description": "Тестовое задание",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon  %NODE_DEBUG_OPTION%  \"index.js\" --watch \"./api\"  ",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "body-parser": "1.15.0",
+    "express": "4.13.4",
+    "swagger-jsdoc": "^3.2.6"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "nodemon": "^1.18.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "personDataAPI"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "engines": {
+    "node": "5.5.0"
+  },
+  "author": "Ivan Burtsev",
+  "license": "ISC"
+}
