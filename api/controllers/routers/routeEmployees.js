@@ -1,6 +1,5 @@
 import App from '../../../app';
 import dbEmployee from '../dataBase/dbEmployee';
-import dbDepartment from "../dataBase/dbDepartment";
 
 /**
  * @swagger
@@ -45,7 +44,7 @@ class routeEmployees {
 
     async _get(req, res) {
         try {
-            res.send(await dbEmployee.getEmployees(req.query.skip));
+            res.json(await dbEmployee.getEmployees(req.query.skip));
         } catch (err) {
             res.status(400).send(err);
         }
@@ -100,41 +99,12 @@ class routeEmployees {
 
     async _post(req, res) {
         try {
-            res.send(await dbEmployee.addEmployee(req.body.firstName, req.body.lastName, req.body.middleName, req.body.tabNumber, req.body.companyId, req.body.departmentId));
+            res.json(await dbEmployee.addEmployee(req.body.firstName, req.body.lastName, req.body.middleName, req.body.tabNumber, req.body.companyId, req.body.departmentId));
         } catch (err) {
             res.status(400).send(err);
         }
     }
 
-    /**
-     * @swagger
-     * /api/employes/{id}:
-     *   get:
-     *     tags:
-     *       - employee
-     *     description: Возвращает работника по id
-     *     produces:
-     *       - application/json
-     *     parameters:
-     *       - name: "id"
-     *         in: "path"
-     *         description: "ID работника"
-     *         required: true
-     *         type: "string"
-     *     responses:
-     *       200:
-     *         description: Посмотреть отделы
-     *         schema:
-     *           $ref: '#/definitions/employee'
-     */
-
-    async _getId(req, res) {
-        try {
-            res.send(await dbEmployee.getEmployee(req.params.id));
-        } catch (err) {
-            res.status(400).send(err);
-        }
-    }
 
     static _init(path) {
         new routeEmployees(path);
@@ -142,7 +112,6 @@ class routeEmployees {
 
     constructor(url) {
         App.route(url).get(this._get).post(this._post);
-        App.route(url + '/:id').get(this._getId);
     }
 
 

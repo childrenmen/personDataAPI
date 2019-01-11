@@ -1,5 +1,6 @@
 import App from '../app';
 import routeEmployees from './controllers/routers/routeEmployees';
+import routeEmployeesId from './controllers/routers/routeEmployeesId';
 import routeDepartment from './controllers/routers/routeDepartment';
 import routeCompany from './controllers/routers/routeCompany';
 
@@ -10,6 +11,7 @@ const PORT = 3000;
 
 
 routeEmployees.init('/api/employes');
+routeEmployeesId.init('/api/employes/:id');
 routeDepartment.init('/api/department');
 routeCompany.init('/api/company');
 
@@ -32,7 +34,7 @@ const swaggerSpec = swaggerJSDoc(options);
 
 App.app.get('/swagger.json', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(swaggerSpec);
+    res.json(swaggerSpec);
 });
 
 App.app.get('/docs', (req, res) => {

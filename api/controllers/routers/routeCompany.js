@@ -40,7 +40,7 @@ class routeCompany {
 
     async _get(req, res) {
         try {
-            res.send(await dbCompany.getCompanies(req.query.skip));
+            res.json(await dbCompany.getCompanies(req.query.skip));
         } catch (err) {
             res.status(400).send(err);
         }
@@ -80,7 +80,7 @@ class routeCompany {
 
     async _post(req, res) {
         try {
-            res.send(await dbCompany.addCompany(req.body.inn, req.body.shortName, req.body.fullName))
+            res.json(await dbCompany.addCompany(req.body.inn, req.body.shortName, req.body.fullName))
         } catch (err) {
             res.status(400).send(err);
         }

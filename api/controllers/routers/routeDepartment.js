@@ -40,7 +40,7 @@ class routeDepartment {
 
     async _get (req, res) {
         try {
-            res.send(await dbDepartment.getDepartments(req.query.skip));
+            res.json(await dbDepartment.getDepartments(req.query.skip));
         }catch (err) {
             res.status(400).send(err);
         }
@@ -82,7 +82,7 @@ class routeDepartment {
 
     async _post (req, res) {
         try {
-            res.send(await dbDepartment.addDepartment(req.body.codeFinance, req.body.shortName,req.body.fullName));
+            res.json(await dbDepartment.addDepartment(req.body.codeFinance, req.body.shortName,req.body.fullName));
         }catch (err) {
             res.status(302).send(err);
         }
