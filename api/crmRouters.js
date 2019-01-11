@@ -21,7 +21,7 @@ const swaggerDefinition = {
         version: '1.0.0',
         description: 'Данная API создана исколючительно для теста',
     },
-    host: 'localhost:3000',
+    host: '3.17.67.140',
     basePath: '/',
 };
 const options = {

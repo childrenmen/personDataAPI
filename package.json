@@ -4,7 +4,7 @@
   "description": "Тестовое задание",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon  %NODE_DEBUG_OPTION%  \"index.js\" --watch \"./api\"  ",
+    "start": "node index.js",
     "test": "jest"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "body-parser": "1.15.0",
     "express": "4.13.4",
+    "mongoose": "^5.4.3",
     "swagger-jsdoc": "^3.2.6"
   },
   "devDependencies": {
